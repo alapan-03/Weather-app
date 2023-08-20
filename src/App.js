@@ -125,25 +125,6 @@ const handle = async (city) => {
 }
 
 const handle2 = async (city) => {
-//   console.log(id)
-//   const url = `https://foreca-weather.p.rapidapi.com/current/${id}?alt=0&tempunit=C&windunit=MS&tz=Europe%2FLondon&lang=en`;
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-//       'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com'
-//     }
-//   };
-  
-//   try {
-//     const response = await fetch(url, options);
-//     const result = await response.json();
-//     setState(result)
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
 
 const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
 const options = {

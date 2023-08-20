@@ -59,33 +59,6 @@ const Carousel = (props) => {
 
   
     
-    // return (
-    //   <div className="forecast-container">
-      {/* <h4>Today:</h4> */}
-      {/* <ul className="forecast container mt-5" style={{boxShadow:".1rem .1rem .2rem", borderRadius:"20px", backgroundColor:"#faf7fa"}}> */}
-      {/* <ul className="forecast container mt-5">
-        {firstSixForecasts.map((item, index) => {
-
-          const forecastTime = new Date(item.dt * 1000).getHours();
-          const isNightTime = forecastTime >= 19 || forecastTime < 6;
-
-          <li key={index}>
-<br/>
-          {(item.main.temp-273.15).toString().split(".")[0]}°C<br />
-          {item.weather[0].description.includes("rain") && item.dt <= 1692489600 &&<img src={rain} className="icon-rain mb-3 mt-3" style={{width:"30px",display:"block"}}/>}
-
-          {item.weather[0].description.includes("sky") && item.dt <= 1692489600 &&<img src={sun} className="icon-sun mb-3 mt-3" style={{width:"30px", display:"block"}}/>} */}
-
-          {/* {item.weather[0].description.includes("cloud") && item.dt <= 1692489600 &&<img src={cloud} className="icon-cloud mb-3 mt-3" style={{width:"30px", display:"block"}}/>}
-          <p style={{transform:"translate(0, .9rem"}}>{item.dt > 1692489600 && item.weather[0].description.includes("cloud") && <CloudMoon strokeWidth={1.5} size={37}/>}</p> */}
-          {/* {item.dt} */}
-          {/* <p>{item.dt > 1692489600 && !item.weather[0].description.includes("cloud") && <MoonStar size={30}/>}</p>
-          {new Date(item.dt * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}<br/><br/>
-          {(item.dt * 1000)} */}
-          {/* {item.weather[0].description} */}
-
-//             </li>
-// })}
 
   return (
     <div className="forecast-container">
@@ -110,8 +83,7 @@ const Carousel = (props) => {
               <p style={{transform:"translate(0, 1rem)"}}>
               {new Date(item.dt * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}<br /><br />
               </p>
-              {/* Unix timestamp */}
-              {/* {item.dt * 1000} */}
+              
             </li>
           );
         })}

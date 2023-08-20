@@ -91,35 +91,7 @@ const Carousel2 = (props) => {
       </div>
     </div>
 
-// return (
-//   <div className="mt-5">
-//     <div className="forecast-grid">
-//       {Object.keys(group).map((date) => (
-//         <div key={date} className="grid-item">
-//           <h4>{date}</h4>
-//           <div className="temperature">
-//             <span className="temp-max">
-//               {(group[date][0].main.temp_max - 270.15).toFixed(0)}°C
-//             </span>
-//             <span className="temp-min">
-//               {(group[date][0].main.temp_min - 274.15).toFixed(0)}°C
-//             </span>
-//           </div>
-//           <img
-//             src={
-//               group[date][0].weather[0].description.includes("rain")
-//                 ? rain
-//                 : group[date][0].weather[0].description.includes("sun")
-//                 ? sun
-//                 : cloud
-//             }
-//             className="weather-icon"
-//             alt={group[date][0].weather[0].description}
-//           />
-//         </div>
-//       ))}
-//     </div>
-//   </div>
+
   );
 };
 export default Carousel2;
