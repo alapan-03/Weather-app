@@ -156,9 +156,7 @@ list-style: none;
 .inf0-1 p{
   width: 200px;
 }
-.body{
-  overflow-x: hidden;
-}
+
 
 /* footer.css */
 .footer {
@@ -192,3 +190,6 @@ list-style: none;
   margin: 0;
 }
   
+body{
+  overflow-X: hidden;
+}

@@ -11,7 +11,7 @@ const Carousel = (props) => {
   const [error, setError] = useState(false);
   const [forecastData, setForecastData] = useState([]);
   const apiKey = '29ec8ca11c3e92dff01dc04226fd4802';
-  const city = props.state; // Change this to the city you want to fetch data for
+  const city = props.stateOfCity; // Change this to the city you want to fetch data for
 
   function imp(){
     return icon1    

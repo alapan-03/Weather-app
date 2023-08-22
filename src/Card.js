@@ -6,7 +6,9 @@ import cloud1 from "./cloud1 (2).jpg";
 import { SunMedium, Moon } from "lucide-react";
 
 export default function Card(props) {
-  const weatherData = props.state;
+  const weatherData = props.stateOfTemp;
+  console.log("wd = "+weatherData)
+  console.log("descccc = "+weatherData.main)
   const time = props.state2;
 
   const forecastTime = new Date().getHours();
@@ -58,10 +60,10 @@ export default function Card(props) {
               fontSize: "40px",
             }}
           >
-            {weatherData.temp} °C{" "}
-            <p style={{ fontSize: "18px", color: "grey" }}>{props.state3}</p>
+            {weatherData.main && weatherData.main.temp.toFixed(0)} °C{" "}
+            <p style={{ fontSize: "18px", color: "grey" }}>{props.stateOfCity}</p>
           </p>
-          {console.log(props.state3)}
+          {/* {console.log("ff = "+weatherData.main)} */}
         </div>
 
         <div class="card-body"></div>

@@ -33,7 +33,7 @@ export default function Navbar(props) {
           <a class="nav-link mx-2" href="#">Link</a>
         </li>
 
-    <a class="navbar-brand position-relative start-100" style={{transform:"translate(11rem, 0)"}} href="#">Weather-Bird</a>  
+    <a class="navbar-brand position-relative start-100" style={{transform:"translate(2rem, 0)"}} href="#">Weather-Bird</a>  
       </ul>
       <form class="d-flex" role="search" onSubmit={add}> 
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={state} onChange={e=> setState(e.target.value)}/>

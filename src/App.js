@@ -11,9 +11,9 @@ import Footer from './Footer';
 
 function App() {
 
-const [state, setState] = useState("")
+const [stateOfTemp, setStateOfTemp] = useState("")
 const [state2, setState2] = useState("kolkata")
-const [state3, setState3] = useState("kolkata")
+const [stateOfCity, setStateOfCity] = useState("kolkata")
 
 
 // to fetch geolocation, if the user grants...
@@ -67,13 +67,13 @@ function reverseGeocode(latitude, longitude) {
         console.log('City:', cityName);
         // setState(cityName)
         // setState2(cityName)
-        setState3(cityName)
+        setStateOfCity(cityName)
         
         
-        handle2(cityName)
+        handle(cityName)//
 
 
-        setState(cityName)
+        setStateOfTemp(cityName)
       } else {
         console.log('No results found');
       }
@@ -87,89 +87,143 @@ function reverseGeocode(latitude, longitude) {
   
   // handle function is used to fetch location data from API-1
 
-const handle = async (city) => {
+// const handle = async (city) => {
   
 
-  console.log(city)
+//   console.log(city)
 
-  const url = `https://foreca-weather.p.rapidapi.com/location/search/${city}?lang=en&country=`
-    const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-      'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com'
-    }
-  };
+//   const url = `https://foreca-weather.p.rapidapi.com/location/search/${city}?lang=en&country=`
+//     const options = {
+//     method: 'GET',
+//     headers: {
+//       'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
+//       'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com'
+//     }
+//   };
   
+//   try {
+//     const response = await fetch(url, options);
+//     const result = await response.text();
+//     if(result.length>0){
+//     setState(result)
+//     setState3(city)
+//     }
+//     else{
+//       console.log("error")
+//     }
+
+//     await handle2(city)
+  
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// const handle2 = async (city) => {
+
+// const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
+// const options = {
+  // 	method: 'GET',
+  // 	headers: {
+    // 		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
+    // 		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+    // 	}
+    // };
+
+// try {
+  // 	const response = await fetch(url, options);
+  // 	const result = await response.json();
+  //   if(result.length>0){
+    //   handle3(city)
+    //   setState(result)
+    //   }
+    //   else
+    //   console.log("error")
+    // } catch (error) {
+      // 	console.error(error);
+      // }
+      // }
+      
+      // const handle3 = async (city) => {
+      //   const url = `https://world-time-by-api-ninjas.p.rapidapi.com/v1/worldtime?city=${city}`;
+      // const options = {
+      // 	method: 'GET',
+      // 	headers: {
+      // 		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
+      // 		'X-RapidAPI-Host': 'world-time-by-api-ninjas.p.rapidapi.com'
+      // 	}
+      // };
+      
+      // try {
+      // 	const response = await fetch(url, options);
+      // 	const result = await response.json();
+      //   setState2(result)
+      // 	console.log(result);
+      // } catch (error) {
+      // 	console.error(error);
+      // }
+      // }
+        
+      const handle = async (city) => {
+        const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        
+        // console.log("sfkjfsjg = "+city)
   try {
-    const response = await fetch(url, options);
-    const result = await response.text();
-    if(result.length>0){
-    setState(result)
-    setState3(city)
+    const response = await fetch(url);
+    const result = await response.json();
+
+    if (response.ok) {
+      console.log("point1 = "+result)
+      // handle3(city);
+      setStateOfTemp(result);
+      // console.log(state)
+      setState2(result)
+      setStateOfCity(city)
+    } else {
+      console.log("Error:", result.message);
     }
-    else{
-      console.log("error")
-    }
-    // console.log(result)
-    // if(result.length>0){
-    //   const locationId = result[0].id
-    //   handle2(locationId)
-    // }
-    await handle2(city)
-    // setState(result)
-    // console.log(result);
   } catch (error) {
     console.error(error);
   }
-}
-
-const handle2 = async (city) => {
-
-const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-	}
 };
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-  if(result.length>0){
-	// console.log(result);
-  handle3(city)
-  setState(result)
-  }
-  else
-  console.log("error")
-} catch (error) {
-	console.error(error);
-}
-}
 
-const handle3 = async (city) => {
-  const url = `https://world-time-by-api-ninjas.p.rapidapi.com/v1/worldtime?city=london`;
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-		'X-RapidAPI-Host': 'world-time-by-api-ninjas.p.rapidapi.com'
-	}
-};
+// const handle2 = async (city) => {
+//   const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
+//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-  setState2(result)
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-}
-  
+//   try {
+//     const response = await fetch(url);
+//     const result = await response.json();
+
+//     if (response.ok) {
+//       handle3(city);
+//       setState(result);
+//     } else {
+//       console.log("Error:", result.message);
+//     }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+
+// const handle3 = async (city) => {
+//   const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
+//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+//   try {
+//     const response = await fetch(url);
+//     const result = await response.json();
+//     setState2(result);
+//     console.log(result);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+
   return (
     <div className="App">
 
@@ -178,10 +232,11 @@ try {
 {/* {console.log(state)} */}
       {/* <Search/> */}
       
-      <Card state={state} state2={state2} state3={state3}/>
-      <Carousel state={state3}/>
-      <MoreInfo state={state3}/>
-      <Carousel2 state={state3}/>
+      {console.log(stateOfCity+"lnfwnnjfllllll")}
+      <Card stateOfTemp={stateOfTemp} state2={state2} stateOfCity={stateOfCity}/>
+      <Carousel stateOfCity={stateOfCity}/>
+      <MoreInfo stateOfCity={stateOfCity}/>
+      <Carousel2 stateOfCity={stateOfCity}/>
       <Footer/>
     </div>
   );
