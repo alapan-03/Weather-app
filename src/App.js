@@ -84,85 +84,7 @@ function reverseGeocode(latitude, longitude) {
   } 
   
   
-  
-  // handle function is used to fetch location data from API-1
 
-// const handle = async (city) => {
-  
-
-//   console.log(city)
-
-//   const url = `https://foreca-weather.p.rapidapi.com/location/search/${city}?lang=en&country=`
-//     const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-//       'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com'
-//     }
-//   };
-  
-//   try {
-//     const response = await fetch(url, options);
-//     const result = await response.text();
-//     if(result.length>0){
-//     setState(result)
-//     setState3(city)
-//     }
-//     else{
-//       console.log("error")
-//     }
-
-//     await handle2(city)
-  
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// const handle2 = async (city) => {
-
-// const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
-// const options = {
-  // 	method: 'GET',
-  // 	headers: {
-    // 		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-    // 		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-    // 	}
-    // };
-
-// try {
-  // 	const response = await fetch(url, options);
-  // 	const result = await response.json();
-  //   if(result.length>0){
-    //   handle3(city)
-    //   setState(result)
-    //   }
-    //   else
-    //   console.log("error")
-    // } catch (error) {
-      // 	console.error(error);
-      // }
-      // }
-      
-      // const handle3 = async (city) => {
-      //   const url = `https://world-time-by-api-ninjas.p.rapidapi.com/v1/worldtime?city=${city}`;
-      // const options = {
-      // 	method: 'GET',
-      // 	headers: {
-      // 		'X-RapidAPI-Key': 'aff5d228demsh847a17d81a5fcc4p117bc7jsn062f09a1c067',
-      // 		'X-RapidAPI-Host': 'world-time-by-api-ninjas.p.rapidapi.com'
-      // 	}
-      // };
-      
-      // try {
-      // 	const response = await fetch(url, options);
-      // 	const result = await response.json();
-      //   setState2(result)
-      // 	console.log(result);
-      // } catch (error) {
-      // 	console.error(error);
-      // }
-      // }
         
       const handle = async (city) => {
         const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
@@ -189,39 +111,6 @@ function reverseGeocode(latitude, longitude) {
 };
 
 
-// const handle2 = async (city) => {
-//   const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
-//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-//   try {
-//     const response = await fetch(url);
-//     const result = await response.json();
-
-//     if (response.ok) {
-//       handle3(city);
-//       setState(result);
-//     } else {
-//       console.log("Error:", result.message);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
-
-// const handle3 = async (city) => {
-//   const apiKey = '29ec8ca11c3e92dff01dc04226fd4802'; // Replace with your OpenWeather API key
-//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-//   try {
-//     const response = await fetch(url);
-//     const result = await response.json();
-//     setState2(result);
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
 
 
   return (

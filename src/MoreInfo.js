@@ -28,32 +28,6 @@ export default function MoreInfo(props) {
     }, [city, apiKey]);
 
 
-    // const filterData = (date) => {
-    //     return forecastData.filter((item)=>{
-    //         const itemDate = new Date(item.dt * 1000).toLocaleDateString();
-    //         return itemDate===date
-    //     }).map((item)=>(
-            // {console.log("fkokmfk")}
-            
-//         <div key={item.dt} className="info" style={{width:"1000px"}}>
-//             <ul class="list-group" style={{width:"500px", display:"flex"}}>
-//   <li class="list-group-item" >{item.main.temp}</li>
-//   <li class="list-group-item" style={{display:"flex", fontSize:"1.3rem"}}>Humidity: <p style={{position:"relative", left:"2rem"}}>{item.main.humidity}</p></li>
-//   <li class="list-group-item">A third item</li>
-//   <li class="list-group-item">A fourth item</li>
-//   <li class="list-group-item">And a fifth one</li>
-// </ul>
-//         </div>
-        
-{/* <ul className="container text-center info-1">
-  <li>{item.main.temp}</li>
-  <li>{item.main.humidity}</li>
-</ul>
-
-        ))
-    
-} */}
-
 const filterData = (date) => {
   const currentDate = new Date(date);
   const relevantData = forecastData.filter((item) => {
@@ -62,9 +36,6 @@ const filterData = (date) => {
       return itemDate.toLocaleDateString() === currentDate.toLocaleDateString();
   });
 
-  // const totalHumidity = relevantData.reduce((sum, item) => sum + parseInt(item.main.humidity), 0);
-  
-  // const averageHumidity = totalHumidity / relevantData.length;
   
   
   const totalHumidity = relevantData.reduce((sum, item) => {
@@ -92,12 +63,6 @@ const filterData = (date) => {
   <div class="g-col-6 g-col-md-4"><p style={{fontSize:"1.3rem", marginBottom:"-2px", marginTop:"8px"}}>Forecast </p><br></br>{weatherDescription}</div>
 </div>
 
-      // <div className="container text-center info-1">
-      //   <p>Humidity</p>
-      //     <p style={{transform:"translate(-8.2rem, 1rem)"}}><br></br>{averageHumidity.toFixed(2)}</p>
-      //     <p style={{display:"block"}}>Wind speed</p>
-      //     <p><br></br>{averageWindSpeed.toFixed(2)} m/s</p>
-      // </div>
   );
 };
 
